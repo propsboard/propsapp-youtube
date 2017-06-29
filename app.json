@@ -1,0 +1,55 @@
+{
+	"name" : "YouTube",
+	"author" : "Adam Kearney",
+	"description" : "Play any YouTube video on Propsboard!",
+    "longDescription" : "Great to play videos from YouTube.  Just provide the Embed URL and you'll be off and running!  If your page is not loading, the site may be set to not load in a frame.  Installing the following Chrome extension will resolve the issue: https://chrome.google.com/webstore/search/x-frame?_category=extensions  NOTE: This extension should be turned off during normal browsing.",
+	"icon_128" : "img/icon_128.png",
+	"icon_512" : "img/icon_128.png",
+	"screenshots" : [ "img/ss1.png"],
+    "license" : "Creative Commons Zero",
+    "source" : "https://github.com/propsboard/propsapp-youtube",
+    "support" : "https://github.com/propsboard/propsapp-youtube",
+	"version" : "1",
+	"allowedDomains" : [ "*.*" ],
+    "minDisplayInterval" : 3600,
+    "params" : [{
+      "name" : "embedUrl",
+      "type" : "string",
+      "version" : "1",
+      "title" : "Embed URL",
+      "placeholder": "e.g. https://www.youtube.com/embed/QH2-TGUlwu4",
+      "description": "You MUST use an embeddable link. On the YouTube video, click share (just under video; it's an arrow). Then click 'Embed' in the bottom right corner. Copy just the URL link and paste it above.",
+      "verify" : "(\\b(https?|ftp|file):\\/\\/)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]",
+      "required" : true,
+      "position" : 0
+    },
+{
+        "name" : "displayMode",
+        "type" : "option",
+        "title" : "Display Mode",
+        "description": "Do you want the video to loop if over and still being displayed?",
+        "default" : "?autoplay=1&loop=1",
+        "options" : [
+          { "name": "Auto Loop", "value": "?autoplay=1&loop=1" },
+          { "name": "No Loop", "value": "?autoplay=1&loop=0" }
+        ],
+        "required" : false,
+        "position" : 1
+      }
+  ],
+    "requests" : [],
+	"bundles" : [
+      {
+        "name" : "default",
+        "html" : "views/app.html",
+        "css" : "style/app.css",
+        "js" : "js/app.js",
+        "loadImage" : "img/loadimage.png",
+        "defaultPreroll": "img/preroll.gif",
+        "loadBackgroundColor" : "#FFFFFF"
+      }
+    ],
+    "images" : "img/",
+	"includes" : []
+
+}
